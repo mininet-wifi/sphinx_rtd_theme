@@ -3,7 +3,7 @@ Introduction
 **************************
 
 
-Learn more about Mininet-WiFi and SDN with :ref:`The Mininet-WiFi Book<https://mininet-wifi.github.io/book>`
+Learn more about Mininet-WiFi and SDN with `The Mininet-WiFi Book <https://mininet-wifi.github.io/book>`_.
 
 
 Mininet-WiFi is a fork of the Mininet SDN network emulator and extended the functionality of Mininet by adding virtualized WiFi Stations and Access Points based on the standard Linux wireless drivers and the 80211_hwsim wireless simulation driver. This means that new classes has been added in order to support the addition of these wireless devices in a Mininet network scenario and to emulate the attributes of a mobile station such as position and movement relative to the access points.
@@ -35,7 +35,7 @@ Linux OS network namespaces interconnected through virtual Ethernet (veth) pairs
 
 **Access Points**: Are devices that manage associated stations. Virtualized through hostapd daemon and use virtual wireless interfaces for access point and authentication servers. Mininet-WiFi currently includes support for the user space reference implementations and Open vSwitch in kernel and user space modes. Mininet-WiFi used to support the OpenFlow 0.8.9 kernel reference implementation (--ap kernel) but that is now obsolete and has largely been replaced with Open vSwitch.
 The command line options are --ap user (the same as UserAP) and --ap ovsk (the same as OVSAP or OVSKernelAP) for the user reference and Open vSwitch kernel aps, respectively.
-You can also install the :ref:`CPqD BOFUSS<https://github.com/CPqD/ofsoftswitch13>` ap using install.sh -3f; it will replace the Stanford reference switch, i.e. --ap user and UserAP. See below for an example of using it.
+You can also install the `CPqD BOFUSS <https://github.com/CPqD/ofsoftswitch13>`_ ap using install.sh -3f; it will replace the Stanford reference switch, i.e. --ap user and UserAP. See below for an example of using it.
 
 Both stations and access points use cfg80211 to communicate with the wireless device driver, a Linux 802.11 configuration API that provides communication between stations and mac80211. This framework in turn communicates directly with the WiFi device driver through a netlink socket (or more specifically nl80211) that is used to configure the cfg80211 device and for kernel-user-space communication as well.
 

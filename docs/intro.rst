@@ -35,7 +35,7 @@ Linux OS network namespaces interconnected through virtual Ethernet (veth) pairs
 
 **Access Points**: Are devices that manage associated stations. Virtualized through hostapd daemon and use virtual wireless interfaces for access point and authentication servers. Mininet-WiFi currently includes support for the user space reference implementations and Open vSwitch in kernel and user space modes. Mininet-WiFi used to support the OpenFlow 0.8.9 kernel reference implementation (--ap kernel) but that is now obsolete and has largely been replaced with Open vSwitch.
 The command line options are --ap user (the same as UserAP) and --ap ovsk (the same as OVSAP or OVSKernelAP) for the user reference and Open vSwitch kernel aps, respectively.
-You can also install the :ref:`CPqD BOFUSS<https://github.com/CPqD/ofsoftswitch13>` ap using install.sh -3f; it will replace the Stanford reference switch, i.e. --ap user and UserAP. See below for an example of using it.
+You can also install the `CPqD BOFUSS <https://github.com/CPqD/ofsoftswitch13>`_ ap using install.sh -3f; it will replace the Stanford reference switch, i.e. --ap user and UserAP. See below for an example of using it.
 
 Both stations and access points use cfg80211 to communicate with the wireless device driver, a Linux 802.11 configuration API that provides communication between stations and mac80211. This framework in turn communicates directly with the WiFi device driver through a netlink socket (or more specifically nl80211) that is used to configure the cfg80211 device and for kernel-user-space communication as well.
 
@@ -62,7 +62,7 @@ Intermediate Functional Block (IFB) Devices
 
 There are two modes of traffic shaping: ingress and egress. Ingress handles incoming traffic and egress outgoing traffic. Linux does not support shaping/queuing on ingress, but only policing. Therefore IFB exists, which we can attach to the ingress queue while we can add any normal queuing like as egress queue on the IFB device.AP
 
-Intermediate Functional Block (IFB) is an alternative to tc filters for handling ingress traffic, by redirecting it to a virtual interface and treat is as egress traffic. IFB is supported by setting up ifb=True in Mininet_wifi() class. Further information about IFB is available at :ref:`IFB<http://shorewall.net/traffic_shaping.htm#IFB>`
+Intermediate Functional Block (IFB) is an alternative to tc filters for handling ingress traffic, by redirecting it to a virtual interface and treat is as egress traffic. IFB is supported by setting up ifb=True in Mininet_wifi() class. Further information about IFB is available at `IFB <http://shorewall.net/traffic_shaping.htm#IFB>`_.
 
 If you want to enable IFB in Mininet-WiFi you need to set IFB = True within _Mininet_wifi()_:
 
@@ -83,5 +83,5 @@ Wmediumd has been shown to be the best approach for the simulation of the wirele
 - It isolates the wireless interfaces from each other
 - wmediumd implements backoff algorithm. TC relies only in FIFO queue discipline.
 - It decides when the association has to be evoked based on the signal level
-- Values for bandwidth, loss, latency and delay are applied relying in a matrix. This matrix implements an option to determine PER (packet error rate) with outer matrix defined in IEEE 802.11ax. The matrix is defined in Appendix 3 of :ref:`11-14-0571-12 TGax Evaluation Methodology<https://mentor.ieee.org/802.11/dcn/14/11-14-0571-12-00ax-evaluation-methodology.docx>`.
+- Values for bandwidth, loss, latency and delay are applied relying in a matrix. This matrix implements an option to determine PER (packet error rate) with outer matrix defined in IEEE 802.11ax. The matrix is defined in Appendix 3 of `11-14-0571-12 TGax Evaluation Methodology <https://mentor.ieee.org/802.11/dcn/14/11-14-0571-12-00ax-evaluation-methodology.docx>`_.
 - We highly recommend wmediumd for both adhoc and wireless mesh networks.

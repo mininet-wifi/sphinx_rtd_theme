@@ -46,7 +46,7 @@ Lots of extra detail will print out. Now try output, a setting that prints CLI o
 Plotting Graph
 ===================
 
-You need to call `net.plotGraph()`. See sample files at :ref:`examples<https://github.com/intrig-unicamp/mininet-wifi/tree/master/examples>` for your convenience.
+You need to call `net.plotGraph()`. See sample files at `examples <https://github.com/intrig-unicamp/mininet-wifi/tree/master/examples>`_ for your convenience.
 
 <a id="line-styles"></a>
 ### [Customizing the line style](#line-styles)
@@ -69,12 +69,12 @@ isolation. You can either try
 .. code:: console
     sudo mn --wifi --client-isolation
 
-or take :ref:`examples/simplewifitopology.py<https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/simplewifitopology.py>` as reference.
+or take `examples/simplewifitopology.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/simplewifitopology.py>`_ as reference.
 
 Client isolation can be used to prevent low-level bridging of frames between associated stations in the BSS. By default, this bridging is allowed.
 
 You may also want to refer to the OpenFlow spec.
-:ref:`B.6.3 IN PORT Virtual Port<https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/openflow-switch-v1.5.0.noipr.pdf>`
+`B.6.3 IN PORT Virtual Port <https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/openflow-switch-v1.5.0.noipr.pdf>`_
 )
 **The behavior of sending out the incoming port was not clearly defined in earlier versions of the specification. It is now forbidden unless the output port is explicitly set to OFPP_IN_PORT virtual port (0xfff8) is set. The primary place where this is used is for wireless links, where a packet is received over the wireless interface and needs to be sent to another host through the same interface. For example, if a packet needed to be sent to all interfaces on the switch, two actions would need to be specified: ”actions=output:ALL,output:IN PORT”.**
 
@@ -165,7 +165,7 @@ According to the code below, _addNAT_ creates a Node named _nat0_ linked with _a
 Authentication
 ===================
 
-Mininet-WiFi supports WEP, WPA, WPA2 and WPA3. A sample file is available for your convenience at :ref:`examples/authentication<https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/authentication.py>`
+Mininet-WiFi supports WEP, WPA, WPA2 and WPA3. A sample file is available for your convenience at `examples/authentication <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/authentication.py>`_.
 
 **note**: OVS does not support WPA in the kernel space. The only way to make OVS work with WPA is by setting datapath = "user" as below:
 
@@ -176,12 +176,12 @@ Mininet-WiFi supports WEP, WPA, WPA2 and WPA3. A sample file is available for yo
 Background Scanning
 ===================
 
-wpa_supplicant behavior for background scanning can be specified by configuring a bgscan module. These modules are responsible for requesting background scans for the purpose of roaming within an ESS (i.e., within a single network block with all the APs using the same SSID). You can find more information about bgscan at :ref:`wpa_supplicant.conf<https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf>`
+wpa_supplicant behavior for background scanning can be specified by configuring a bgscan module. These modules are responsible for requesting background scans for the purpose of roaming within an ESS (i.e., within a single network block with all the APs using the same SSID). You can find more information about bgscan at `wpa_supplicant.conf <https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf>`_.
 
 
 Energy Consumption
 ===================
-We have started an implementation of an :ref:`Energy Consumption model<https://github.com/intrig-unicamp/mininet-wifi/blob/master/mn_wifi/energy.py>` where you can set the voltage to the node. In :ref:`battery.py<https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/battery.py>` you can get the total of energy consumption with `sensor1.wintfs[0].consumption`. Please note that this is only an initial implementation and contributions are most than welcome.
+We have started an implementation of an `Energy Consumption model <https://github.com/intrig-unicamp/mininet-wifi/blob/master/mn_wifi/energy.py>`_ where you can set the voltage to the node. In `battery.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/battery.py>`_ you can get the total of energy consumption with `sensor1.wintfs[0].consumption`. Please note that this is only an initial implementation and contributions are most than welcome.
 
 
 Building Topologies with GUI
@@ -201,7 +201,7 @@ Socket Communication
 
 The socket communication allows you to access methods implemented in Mininet-WiFi as well as send commands from APs, stations, cars, etc. You only need to start the socket server and access it through the socket client.
 
-A sample file is available at :ref:`examples/socket_server.py<https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/socket_server.py>`
+A sample file is available at `examples/socket_server.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/socket_server.py>`_.
 
 Some of the information you can get from the nodes include:
 * **position** - get.node.position
@@ -219,4 +219,4 @@ Some of the information you can set to the nodes include:
 
 Demo Video
 ===================
-* :ref:`https://www.youtube.com/watch?v=k69t9Xkb0nU<https://www.youtube.com/watch?v=k69t9Xkb0nU>`
+* `https://www.youtube.com/watch?v=k69t9Xkb0nU <https://www.youtube.com/watch?v=k69t9Xkb0nU>`_

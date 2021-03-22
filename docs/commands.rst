@@ -7,7 +7,7 @@ Display Options
 
 To see the list of Command-Line Interface (CLI) options, start up a minimal topology and leave it running. Build the Mininet-WiFi:
 
-.. code:: console
+.. code-block:: console
     $ sudo mn --wifi
 
 
