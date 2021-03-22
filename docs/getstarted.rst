@@ -45,4 +45,4 @@ code-block:: python
 
 **optional:**
 -------------
-* -6: wpan tools  
+* -6: wpan tools

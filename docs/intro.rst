@@ -66,7 +66,7 @@ Intermediate Functional Block (IFB) is an alternative to tc filters for handling
 
 If you want to enable IFB in Mininet-WiFi you need to set IFB = True within _Mininet_wifi()_:
 
-code-block:: python
+.. code:: console
     net = Mininet_wifi(... ifb=True)
 
 
