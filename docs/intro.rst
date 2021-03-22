@@ -44,8 +44,7 @@ Wireless Medium Emulation
 
 Mininet-WiFi relies on two approaches for simulating the wireless medium: tc and wmediumd.
 
-Traffic Control (TC)
-===================
+**Traffic Control (TC)**
 
 Tc (traffic control) is the user-space utility program used to configure the Linux kernel packet scheduler. Used to configure Traffic Control in the Linux kernel, Traffic Control consists of the following:
 
@@ -57,8 +56,7 @@ Tc (traffic control) is the user-space utility program used to configure the Lin
 
 The aforementioned properties have been used to apply values for bandwidth, loss, latency and delay in Mininet-WiFi. Tc was the first approach adopted in Mininet-WiFi for simulating the wireless medium.
 
-Intermediate Functional Block (IFB) Devices
-===================
+**Intermediate Functional Block (IFB) Devices**
 
 There are two modes of traffic shaping: ingress and egress. Ingress handles incoming traffic and egress outgoing traffic. Linux does not support shaping/queuing on ingress, but only policing. Therefore IFB exists, which we can attach to the ingress queue while we can add any normal queuing like as egress queue on the IFB device.AP
 
@@ -71,13 +69,11 @@ If you want to enable IFB in Mininet-WiFi you need to set IFB = True into Minine
     net = Mininet_wifi(... ifb=True)
 
 
-Wmediumd
-===================
+**Wmediumd**
 
 The kernel module mac80211_hwsim uses the same virtual medium for all wireless nodes. This means all nodes are internally in range of each other and they can be discovered in a wireless scan on the virtual interfaces. Mininet-WiFi simulates their position and wireless ranges by assigning stations to other stations or access points and revoking these wireless associations. If wireless interfaces should be isolated from each other (e.g. in adhoc or mesh networks) a solution like wmediumd is required. It uses a kind of a dispatcher to permit or deny the transfer of packets from one interface to another.
 
-Traffic control versus Wmediumd
-===================
+**Traffic control versus Wmediumd**
 
 Wmediumd has been shown to be the best approach for the simulation of the wireless medium. Some advantages include:
 

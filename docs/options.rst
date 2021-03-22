@@ -36,18 +36,17 @@ Adjustable Verbosity
 
 The default verbosity level is info, which prints what Mininet-WiFi is doing during startup and teardown. Compare this with the full debug output with the -v param:
 
-$ sudo mn --wifi -v debug
-
 .. code:: console
 
-    mininet> exit
+    $ sudo mn --wifi -v debug
+    mininet-wifi> exit
 
 Lots of extra detail will print out. Now try output, a setting that prints CLI output and little else:
 
 .. code:: console
 
     $ sudo mn --wifi -v output
-    mininet> exit
+    mininet-wifi> exit
 
 
 Plotting Graph
@@ -127,10 +126,18 @@ It is very common for an organization to have multiple SSIDs in their wireless n
     ap1 = net.addAccessPoint('ap1',  vssids='ssid1,ssid2,ssid3,ssid4', ssid='ssid', mode='g', channel='1')
 
 
+Setting the signal range color
+===================
+
+.. code:: console
+
+    node.set_circle_color("r") # for red color
+
+
 Network Address Translator (NAT)
 ===================
 
-You can add a NAT to the Mininet-WiFi network by calling _net.addNAT()_, as illustrated in the code below.
+You can add a NAT to the Mininet-WiFi network by calling `net.addNAT()`, as illustrated in the code below.
 
 .. code:: python
 
@@ -227,6 +234,7 @@ The socket communication allows you to access methods implemented in Mininet-WiF
 A sample file is available at `examples/socket_server.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/socket_server.py>`_.
 
 Some of the information you can get from the nodes include:
+
 - **position** - get.node.position
 - **channel** - get.node.wintfs[0].channel
 - **mode** - get.node.wintfs[0].mode
@@ -234,12 +242,12 @@ Some of the information you can get from the nodes include:
 - **txpower** - get.node.wintfs[0].txpower
 
 Some of the information you can set to the nodes include:
+
 - **position** = set.node.setPosition("10,10,0")
 - **txpower** = set.node.setTxPower(10, intf=sta1-wlan0)
 - **range** = set.node.setRange(100, intf=sta1-wlan0)
 - **roam** = set.node.roam(bssid, intf=sta1-wlan0)
 
 
-Demo Video
-===================
+**Demo Video**
 - `https://www.youtube.com/watch?v=k69t9Xkb0nU <https://www.youtube.com/watch?v=k69t9Xkb0nU>`_

@@ -39,7 +39,6 @@ Once you have the source tree, the command to install Mininet-WiFi is:
 
 
 **install.sh options:**
-
 * -W: wireless dependencies
 * -l: wmediumd
 * -n: mininet-wifi dependencies
@@ -47,5 +46,4 @@ Once you have the source tree, the command to install Mininet-WiFi is:
 * -v: OpenvSwitch
 
 **optional:**
--------------
 * -6: wpan tools

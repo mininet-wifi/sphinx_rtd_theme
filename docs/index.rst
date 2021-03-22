@@ -14,7 +14,7 @@
    :maxdepth: 1
    :hidden:
 
-   //changelog
+   changelog1
 
 .. toctree::
     :maxdepth: 2
@@ -25,10 +25,13 @@
     manetroutingprotocols
     mobility
     propagationmodels
+    80211p
+    sixlowpan
+    sumo
 
 .. toctree::
     :maxdepth: 3
     :numbered:
-    :caption: xxxx
+    :caption: FAQ
 
-    demo/long
+    faq

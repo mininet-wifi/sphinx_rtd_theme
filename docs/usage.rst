@@ -122,7 +122,7 @@ If Mininet crashes for some reason, clean it up:
 Creating wired link between sta and ap
 ===================
 
-You can create a wired link between station and access point with cls=TCLink, as shown below:
+You can create a wired link between station and access point with `cls=TCLink`, as shown below:
 
 
 .. code:: python

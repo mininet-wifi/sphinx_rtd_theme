@@ -3,7 +3,7 @@ Introduction
 **************************
 
 
-Learn more about Mininet-WiFi and SDN with `The Mininet-WiFi Book <https://mininet-wifi.github.io/book>`_.
+Learn more about Mininet-WiFi and SDN with `The Mininet-WiFi Book <https://mininet-wifi.github.io/book>`_
 
 
 Mininet-WiFi is a fork of the Mininet SDN network emulator and extended the functionality of Mininet by adding virtualized WiFi Stations and Access Points based on the standard Linux wireless drivers and the 80211_hwsim wireless simulation driver. This means that new classes has been added in order to support the addition of these wireless devices in a Mininet network scenario and to emulate the attributes of a mobile station such as position and movement relative to the access points.
@@ -44,8 +44,7 @@ Wireless Medium Emulation
 
 Mininet-WiFi relies on two approaches for simulating the wireless medium: tc and wmediumd.
 
-Traffic Control (TC)
-===================
+**Traffic Control (TC)**
 
 Tc (traffic control) is the user-space utility program used to configure the Linux kernel packet scheduler. Used to configure Traffic Control in the Linux kernel, Traffic Control consists of the following:
 
@@ -57,32 +56,29 @@ Tc (traffic control) is the user-space utility program used to configure the Lin
 
 The aforementioned properties have been used to apply values for bandwidth, loss, latency and delay in Mininet-WiFi. Tc was the first approach adopted in Mininet-WiFi for simulating the wireless medium.
 
-Intermediate Functional Block (IFB) Devices
-===================
+**Intermediate Functional Block (IFB) Devices**
 
 There are two modes of traffic shaping: ingress and egress. Ingress handles incoming traffic and egress outgoing traffic. Linux does not support shaping/queuing on ingress, but only policing. Therefore IFB exists, which we can attach to the ingress queue while we can add any normal queuing like as egress queue on the IFB device.AP
 
-Intermediate Functional Block (IFB) is an alternative to tc filters for handling ingress traffic, by redirecting it to a virtual interface and treat is as egress traffic. IFB is supported by setting up ifb=True in Mininet_wifi() class. Further information about IFB is available at :ref:`IFB<http://shorewall.net/traffic_shaping.htm#IFB>`
+Intermediate Functional Block (IFB) is an alternative to tc filters for handling ingress traffic, by redirecting it to a virtual interface and treat is as egress traffic. IFB is supported by setting up ifb=True in Mininet_wifi() class. Further information about IFB is available at `IFB <http://shorewall.net/traffic_shaping.htm#IFB>`_.
 
-If you want to enable IFB in Mininet-WiFi you need to set IFB = True within _Mininet_wifi()_:
+If you want to enable IFB in Mininet-WiFi you need to set IFB = True into Mininet_wifi():
 
 .. code:: console
 
     net = Mininet_wifi(... ifb=True)
 
 
-Wmediumd
-===================
+**Wmediumd**
 
 The kernel module mac80211_hwsim uses the same virtual medium for all wireless nodes. This means all nodes are internally in range of each other and they can be discovered in a wireless scan on the virtual interfaces. Mininet-WiFi simulates their position and wireless ranges by assigning stations to other stations or access points and revoking these wireless associations. If wireless interfaces should be isolated from each other (e.g. in adhoc or mesh networks) a solution like wmediumd is required. It uses a kind of a dispatcher to permit or deny the transfer of packets from one interface to another.
 
-Traffic control versus Wmediumd
-===================
+**Traffic control versus Wmediumd**
 
 Wmediumd has been shown to be the best approach for the simulation of the wireless medium. Some advantages include:
 
-* It isolates the wireless interfaces from each other
-* wmediumd implements backoff algorithm. TC relies only in FIFO queue discipline.
-* It decides when the association has to be evoked based on the signal level
-* Values for bandwidth, loss, latency and delay are applied relying in a matrix. This matrix implements an option to determine PER (packet error rate) with outer matrix defined in IEEE 802.11ax. The matrix is defined in Appendix 3 of :ref:`11-14-0571-12 TGax Evaluation Methodology<https://mentor.ieee.org/802.11/dcn/14/11-14-0571-12-00ax-evaluation-methodology.docx>`.
-* We highly recommend wmediumd for both adhoc and wireless mesh networks.
+- It isolates the wireless interfaces from each other
+- wmediumd implements backoff algorithm. TC relies only in FIFO queue discipline.
+- It decides when the association has to be evoked based on the signal level
+- Values for bandwidth, loss, latency and delay are applied relying in a matrix. This matrix implements an option to determine PER (packet error rate) with outer matrix defined in IEEE 802.11ax. The matrix is defined in Appendix 3 of `11-14-0571-12 TGax Evaluation Methodology <https://mentor.ieee.org/802.11/dcn/14/11-14-0571-12-00ax-evaluation-methodology.docx>`_.
+- We highly recommend wmediumd for both adhoc and wireless mesh networks.
