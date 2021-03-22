@@ -9,8 +9,8 @@ For example, we have added B.A.T.M.A.N, OLSR and BABEL in `manetRoutingProtocols
 .. code:: console
 
     net.addLink(sta1, cls=adhoc, intf='sta1-wlan0',
-            ssid='adhocNet', proto=olsr,
-            mode='g', channel=5, ht_cap='HT40+')
+                ssid='adhocNet', proto=olsr,
+                mode='g', channel=5, ht_cap='HT40+')
 
 
 You can replace _olsr_ by _batman_ and/or _babel_.
@@ -20,9 +20,9 @@ Arguments can be set with `proto_args`. For example, if you want to set the `hel
 .. code:: console
 
     net.addLink(sta1, cls=adhoc, intf='sta1-wlan0',
-            ssid='adhocNet', proto=olsr,
-            proto_args='-hint 10',
-            mode='g', channel=5, ht_cap='HT40+')
+                ssid='adhocNet', proto=olsr,
+                proto_args='-hint 10',
+                mode='g', channel=5, ht_cap='HT40+')
 
 
 Multiple arguments can also be passed in `proto_args`.
@@ -30,23 +30,24 @@ Multiple arguments can also be passed in `proto_args`.
 The list of parameters can be found with the protocol you are using. For example, we found `-hint` by issuing the `olsrd --help` command.
 
 
-**Installing**
+Installing
+===================
 
-#### BATMAN
+**BATMAN**
 
 .. code:: console
 
     sudo util/install.sh -B
 
 
-#### BABEL
+**BABEL**
 
 .. code:: console
 
     sudo util/install.sh -E
 
 
-#### OLSR
+**OLSR**
 
 .. code:: console
 

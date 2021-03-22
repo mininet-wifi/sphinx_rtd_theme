@@ -39,14 +39,12 @@ The default verbosity level is info, which prints what Mininet-WiFi is doing dur
 .. code:: console
 
     $ sudo mn --wifi -v debug
-    mininet-wifi> exit
 
 Lots of extra detail will print out. Now try output, a setting that prints CLI output and little else:
 
 .. code:: console
 
     $ sudo mn --wifi -v output
-    mininet-wifi> exit
 
 
 Plotting Graph
@@ -131,7 +129,9 @@ Setting the signal range color
 
 .. code:: console
 
-    node.set_circle_color("r") # for red color
+    node.set_circle_color('r') # for red color
+
+Please refer to `matplotlib <https://matplotlib.org/stable/gallery/color/named_colors.html>`_ for more information about the supported colors.
 
 
 Network Address Translator (NAT)

@@ -96,7 +96,7 @@ Gaus Markov
 Custom Mobility
 ===================
 
-You can also define custom mobility. To do so, you may want to refer to `examples/mobility.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/mobility.py) and [`examples/replaying/replayingMobility.py`](https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/replaying/replayingMobility.py>`_ for more information.
+You can also define custom mobility. To do so, you may want to refer to `examples/mobility.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/mobility.py>`_ and `examples/replaying/replayingMobility.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/replaying/replayingMobility.py>`_ for more information.
 
 
 Handover association mechanisms
