@@ -1,7 +1,7 @@
 .. include:: ../README.rst
 
 .. toctree::
-   :caption: Get Started
+   :caption: Introduction
    :maxdepth: 2
 
    getstarted
