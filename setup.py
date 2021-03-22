@@ -88,7 +88,7 @@ class TransifexCommand(distutils.cmd.Command):
 setup(
     name='sphinx_rtd_theme',
     version='0.5.1',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
+    url='https://github.com/mininet-wifi/sphinx_rtd_theme',
     license='MIT',
     author='Dave Snider, Read the Docs, Inc. & contributors',
     author_email='dev@readthedocs.org',
@@ -148,8 +148,8 @@ setup(
         'Topic :: Software Development :: Documentation',
     ],
     project_urls={
-        'Homepage': 'https://sphinx-rtd-theme.readthedocs.io/',
-        'Source Code': 'https://github.com/readthedocs/sphinx_rtd_theme',
-        'Issue Tracker': 'https://github.com/readthedocs/sphinx_rtd_theme/issues',
+        'Homepage': 'https://mininet-wifi.readthedocs.io/',
+        'Source Code': 'https://github.com/mininet-wifi/sphinx_rtd_theme',
+        'Issue Tracker': 'https://github.com/mininet-wifi/sphinx_rtd_theme/issues',
     },
 )
