@@ -19,19 +19,22 @@ We strongly recommend more recent Ubuntu releases, because they support newer ve
 
 To install natively from source, first you need to get the source code:
 
-code-block:: python
+.. code:: console
+
     git clone git://github.com/intrig-unicamp/mininet-wifi
 
 
 Note that the above git command will check out the latest and greatest Mininet (which we recommend!)
 
-code-block:: python
+.. code:: console
+
     cd mininet-wifi
 
 
 Once you have the source tree, the command to install Mininet-WiFi is:
 
-code-block:: python
+.. code:: console
+
     sudo util/install.sh -Wlnfv
 
 

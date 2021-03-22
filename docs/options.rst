@@ -25,6 +25,7 @@ This command created the same Mininet-WiFi, ran an iperf server on one host, ran
 The default topology is a single ap connected to two stations. You could change this to a different topo with --topo, and pass parameters for that topology’s creation. For example, to verify all-pairs ping connectivity with one ap and three stations:
 
 Run a regression test:
+
 .. code:: console
 
     $ sudo mn --wifi --test pingall --topo single,3
@@ -36,6 +37,7 @@ Adjustable Verbosity
 The default verbosity level is info, which prints what Mininet-WiFi is doing during startup and teardown. Compare this with the full debug output with the -v param:
 
 $ sudo mn --wifi -v debug
+
 .. code:: console
 
     mininet> exit
@@ -53,8 +55,8 @@ Plotting Graph
 
 You need to call `net.plotGraph()`. See sample files at `examples <https://github.com/intrig-unicamp/mininet-wifi/tree/master/examples>`_ for your convenience.
 
-<a id="line-styles"></a>
-### [Customizing the line style](#line-styles)
+Customizing the line style
+===================
 
 
 When you create a link between two APs a solid line between the two APs is created. However, if you wish to customize the line style you can do as follows:
@@ -72,6 +74,7 @@ Client Isolation
 
 By default, stations associated with the same access point can communicate with each other without OpenFlow rules. If you want to enable OpenFlow in such case, you need to enable the client
 isolation. You can either try
+
 .. code:: console
 
     sudo mn --wifi --client-isolation
@@ -89,12 +92,14 @@ Multiple Wireless Network Interfaces
 ===================
 
 Wireless nodes can have multiple wireless interfaces. The wlans parameter Multiple Wirelessallows you to add many interfaces on a single node. For example, let’s take the code below:
+
 .. code:: console
 
     sta1 = net.addStation('sta1', wlans=2)
 
 
 wlans=2 means that two wireless interfaces will be creted for sta1. APs can have multiple wireless interfaces as well, however, they deserve a particular attention. For example, let’s take the code below:
+
 .. code:: console
 
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=['ssid1','ssid2'], mode='g', channel='1')
@@ -107,6 +112,7 @@ You have to define two SSIDs separated by comma in array style. If you do not wa
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=['ssid1',''], mode='g', channel='1')
 
 or even
+
 .. code:: console
 
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=ssid1, mode='g', channel='1')
@@ -115,6 +121,7 @@ or even
 Multiple SSIDs over a Single AP
 ===================
 It is very common for an organization to have multiple SSIDs in their wireless network for various purposes, including: (i) to provide different security mechanisms such as WPA2-Enterprise for your employees and an “open” network with a captive portal for guests; (ii) to split bandwidth among different types of service; or (iii) to reduce costs by reducing the amount of physical access points. In Mininet-WiFi, an unique AP supports up to 8 different SSIDs (limitation imposed by mac80211_hwsim). Multiple SSIDs can be configured as below:
+
 .. code:: console
 
     ap1 = net.addAccessPoint('ap1',  vssids='ssid1,ssid2,ssid3,ssid4', ssid='ssid', mode='g', channel='1')
@@ -220,19 +227,19 @@ The socket communication allows you to access methods implemented in Mininet-WiF
 A sample file is available at `examples/socket_server.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/socket_server.py>`_.
 
 Some of the information you can get from the nodes include:
-* **position** - get.node.position
-* **channel** - get.node.wintfs[0].channel
-* **mode** - get.node.wintfs[0].mode
-* **rssi** - get.node.wintfs[0].rssi
-* **txpower** - get.node.wintfs[0].txpower
+- **position** - get.node.position
+- **channel** - get.node.wintfs[0].channel
+- **mode** - get.node.wintfs[0].mode
+- **rssi** - get.node.wintfs[0].rssi
+- **txpower** - get.node.wintfs[0].txpower
 
 Some of the information you can set to the nodes include:
-* **position** = set.node.setPosition("10,10,0")
-* **txpower** = set.node.setTxPower(10, intf=sta1-wlan0)
-* **range** = set.node.setRange(100, intf=sta1-wlan0)
-* **roam** = set.node.roam(bssid, intf=sta1-wlan0)
+- **position** = set.node.setPosition("10,10,0")
+- **txpower** = set.node.setTxPower(10, intf=sta1-wlan0)
+- **range** = set.node.setRange(100, intf=sta1-wlan0)
+- **roam** = set.node.roam(bssid, intf=sta1-wlan0)
 
 
 Demo Video
 ===================
-* `https://www.youtube.com/watch?v=k69t9Xkb0nU <https://www.youtube.com/watch?v=k69t9Xkb0nU>`_
+- `https://www.youtube.com/watch?v=k69t9Xkb0nU <https://www.youtube.com/watch?v=k69t9Xkb0nU>`_
