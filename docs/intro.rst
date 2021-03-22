@@ -80,8 +80,8 @@ Traffic control versus Wmediumd
 
 Wmediumd has been shown to be the best approach for the simulation of the wireless medium. Some advantages include:
 
-* It isolates the wireless interfaces from each other
-* wmediumd implements backoff algorithm. TC relies only in FIFO queue discipline.
-* It decides when the association has to be evoked based on the signal level
-* Values for bandwidth, loss, latency and delay are applied relying in a matrix. This matrix implements an option to determine PER (packet error rate) with outer matrix defined in IEEE 802.11ax. The matrix is defined in Appendix 3 of :ref:`11-14-0571-12 TGax Evaluation Methodology<https://mentor.ieee.org/802.11/dcn/14/11-14-0571-12-00ax-evaluation-methodology.docx>`.
-* We highly recommend wmediumd for both adhoc and wireless mesh networks.
+- It isolates the wireless interfaces from each other
+- wmediumd implements backoff algorithm. TC relies only in FIFO queue discipline.
+- It decides when the association has to be evoked based on the signal level
+- Values for bandwidth, loss, latency and delay are applied relying in a matrix. This matrix implements an option to determine PER (packet error rate) with outer matrix defined in IEEE 802.11ax. The matrix is defined in Appendix 3 of :ref:`11-14-0571-12 TGax Evaluation Methodology<https://mentor.ieee.org/802.11/dcn/14/11-14-0571-12-00ax-evaluation-methodology.docx>`.
+- We highly recommend wmediumd for both adhoc and wireless mesh networks.
