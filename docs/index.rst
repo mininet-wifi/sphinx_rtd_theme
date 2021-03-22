@@ -14,7 +14,7 @@
    :maxdepth: 1
    :hidden:
 
-   changelog
+   //changelog
 
 .. toctree::
     :maxdepth: 2

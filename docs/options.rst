@@ -8,6 +8,7 @@ You do not need to drop into the CLI; Mininet-WiFi can also be used to run self-
 Run a regression test:
 
 .. code:: console
+
     $ sudo mn --wifi --test pingpair
 
 
@@ -16,6 +17,7 @@ This command created a minimal topology, started up the OpenFlow reference contr
 Another useful test is iperf (give it about 10 seconds to complete):
 
 .. code:: console
+
     $ sudo mn --wifi --test iperf
 
 This command created the same Mininet-WiFi, ran an iperf server on one host, ran an iperf client on the second host, and parsed the bandwidth achieved.
@@ -24,6 +26,7 @@ The default topology is a single ap connected to two stations. You could change 
 
 Run a regression test:
 .. code:: console
+
     $ sudo mn --wifi --test pingall --topo single,3
 
 
@@ -34,11 +37,13 @@ The default verbosity level is info, which prints what Mininet-WiFi is doing dur
 
 $ sudo mn --wifi -v debug
 .. code:: console
+
     mininet> exit
 
 Lots of extra detail will print out. Now try output, a setting that prints CLI output and little else:
 
 .. code:: console
+
     $ sudo mn --wifi -v output
     mininet> exit
 
@@ -55,6 +60,7 @@ You need to call `net.plotGraph()`. See sample files at `examples <https://githu
 When you create a link between two APs a solid line between the two APs is created. However, if you wish to customize the line style you can do as follows:
 
 .. code:: console
+
     net.addLink(ap1, ap2, ls='.')
 
 
@@ -67,6 +73,7 @@ Client Isolation
 By default, stations associated with the same access point can communicate with each other without OpenFlow rules. If you want to enable OpenFlow in such case, you need to enable the client
 isolation. You can either try
 .. code:: console
+
     sudo mn --wifi --client-isolation
 
 or take `examples/simplewifitopology.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/simplewifitopology.py>`_ as reference.
@@ -83,21 +90,25 @@ Multiple Wireless Network Interfaces
 
 Wireless nodes can have multiple wireless interfaces. The wlans parameter Multiple Wirelessallows you to add many interfaces on a single node. For example, let’s take the code below:
 .. code:: console
+
     sta1 = net.addStation('sta1', wlans=2)
 
 
 wlans=2 means that two wireless interfaces will be creted for sta1. APs can have multiple wireless interfaces as well, however, they deserve a particular attention. For example, let’s take the code below:
 .. code:: console
+
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=['ssid1','ssid2'], mode='g', channel='1')
 
 
 You have to define two SSIDs separated by comma in array style. If you do not want two SSIDs for some reason, you can do like below:
 
 .. code:: console
+
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=['ssid1',''], mode='g', channel='1')
 
 or even
 .. code:: console
+
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=ssid1, mode='g', channel='1')
 
 
@@ -105,6 +116,7 @@ Multiple SSIDs over a Single AP
 ===================
 It is very common for an organization to have multiple SSIDs in their wireless network for various purposes, including: (i) to provide different security mechanisms such as WPA2-Enterprise for your employees and an “open” network with a captive portal for guests; (ii) to split bandwidth among different types of service; or (iii) to reduce costs by reducing the amount of physical access points. In Mininet-WiFi, an unique AP supports up to 8 different SSIDs (limitation imposed by mac80211_hwsim). Multiple SSIDs can be configured as below:
 .. code:: console
+
     ap1 = net.addAccessPoint('ap1',  vssids='ssid1,ssid2,ssid3,ssid4', ssid='ssid', mode='g', channel='1')
 
 
@@ -114,6 +126,7 @@ Network Address Translator (NAT)
 You can add a NAT to the Mininet-WiFi network by calling _net.addNAT()_, as illustrated in the code below.
 
 .. code:: python
+
     #!/usr/bin/python
 
     "Example to create a Mininet-WiFi topology and connect it to the internet via NAT"
@@ -159,6 +172,7 @@ You can add a NAT to the Mininet-WiFi network by calling _net.addNAT()_, as illu
 According to the code below, _addNAT_ creates a Node named _nat0_ linked with _ap1_. The IP 192.168.100.254 will be assigned to _nat0_ and this is the default gateway assigned to the all nodes that make up the network topology (only _sta1_ in our case).
 
 .. code:: console
+
     net.addNAT(name='nat0', linkTo='ap1', ip='192.168.100.254').configDefault()
 
 
@@ -170,6 +184,7 @@ Mininet-WiFi supports WEP, WPA, WPA2 and WPA3. A sample file is available for yo
 **note**: OVS does not support WPA in the kernel space. The only way to make OVS work with WPA is by setting datapath = "user" as below:
 
 .. code:: console
+
     ap1 = net.addAccessPoint('ap1', .... datapath='user')
 
 
@@ -192,6 +207,7 @@ Building Topologies with GUI
 You can run Miniedit from the __examples__ directory. For example:
 
 .. code:: console
+
     ~/mininet-wifi$ sudo python examples/miniedit.py
 
 

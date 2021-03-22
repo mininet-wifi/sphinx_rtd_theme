@@ -3,7 +3,7 @@ Introduction
 **************************
 
 
-Learn more about Mininet-WiFi and SDN with :ref:`The Mininet-WiFi Book<https://mininet-wifi.github.io/book>`
+Learn more about Mininet-WiFi and SDN with `The Mininet-WiFi Book <https://mininet-wifi.github.io/book>`_
 
 
 Mininet-WiFi is a fork of the Mininet SDN network emulator and extended the functionality of Mininet by adding virtualized WiFi Stations and Access Points based on the standard Linux wireless drivers and the 80211_hwsim wireless simulation driver. This means that new classes has been added in order to support the addition of these wireless devices in a Mininet network scenario and to emulate the attributes of a mobile station such as position and movement relative to the access points.
@@ -64,9 +64,10 @@ There are two modes of traffic shaping: ingress and egress. Ingress handles inco
 
 Intermediate Functional Block (IFB) is an alternative to tc filters for handling ingress traffic, by redirecting it to a virtual interface and treat is as egress traffic. IFB is supported by setting up ifb=True in Mininet_wifi() class. Further information about IFB is available at `IFB <http://shorewall.net/traffic_shaping.htm#IFB>`_.
 
-If you want to enable IFB in Mininet-WiFi you need to set IFB = True within _Mininet_wifi()_:
+If you want to enable IFB in Mininet-WiFi you need to set IFB = True into Mininet_wifi():
 
 .. code:: console
+
     net = Mininet_wifi(... ifb=True)
 
 
