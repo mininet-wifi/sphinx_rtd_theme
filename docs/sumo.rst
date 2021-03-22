@@ -1,5 +1,5 @@
 **************************
-SUMO
+SUMO (Simulation of Urban MObility)
 **************************
 
 

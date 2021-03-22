@@ -21,10 +21,10 @@
     :numbered:
     :caption: Supported Features
 
-    containernet
-    manetroutingprotocols
     mobility
     propagationmodels
+    containernet
+    manetroutingprotocols
     80211p
     sixlowpan
     sumo

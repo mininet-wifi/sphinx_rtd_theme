@@ -172,21 +172,22 @@ Confirming the new value:
 Setting Channel
 ===================
 You can set the channel either by iw tool:
-### if the node is AP:
+
+**if the node is AP:**
 
 
 .. code:: console
 
     mininet-wifi> ap1 hostapd_cli -i ap1-wlan1 chan_switch 1 2412
 
-### if the node is working in mesh mode:
+**if the node is working in mesh mode:**
 
 
 .. code:: console
 
     mininet-wifi> sta1 iw dev sta1-mp0 set channel 1
 
-### if the node is working in adhoc mode:
+**if the node is working in adhoc mode:**
 
 
 .. code:: console
@@ -250,28 +251,28 @@ You can set the signal range - circle - color with:
 Setting the Operation Mode
 ===================
 
-### Master
+**Master**
 
 .. code:: console
 
     sta1.setMasterMode(intf='sta1-wlan0', ssid='ap1-ssid', channel='1', mode='g')
 
 
-### Managed
+**Managed**
 
 .. code:: console
 
     ap1.setManagedMode(intf='ap1-wlan1')
 
 
-### Adhoc
+**Adhoc**
 
 .. code:: console
 
     sta1.setAdhocMode(intf='sta1-wlan0')
 
 
-### Mesh
+**Mesh**
 
 .. code:: console
 
