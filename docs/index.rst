@@ -1,12 +1,13 @@
 .. include:: ../README.rst
 
 .. toctree::
-   :caption: Theme Documentation
+   :caption: Get Started
    :maxdepth: 2
 
-   installing
-   configuring
-   contributing
+   getstarted
+   usage
+   options
+   commands
 
 .. toctree::
    :maxdepth: 1
@@ -17,16 +18,16 @@
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Demo Documentation
+    :caption: Supported Features
 
-    demo/structure
-    demo/demo
-    demo/lists_tables
-    demo/api
+    containernet
+    manetroutingprotocols
+    mobility
+    propagationmodels
 
 .. toctree::
     :maxdepth: 3
     :numbered:
-    :caption: This is an incredibly long caption for a long menu
+    :caption: xxxx
 
     demo/long
