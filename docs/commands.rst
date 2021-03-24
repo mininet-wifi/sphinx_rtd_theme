@@ -2,19 +2,7 @@
 Mininet-WiFi Command-Line Interface (CLI) Commands and Attributes
 ************
 
-Display Options
-===================
-
-To see the list of Command-Line Interface (CLI) options, start up a minimal topology and leave it running. Build the Mininet-WiFi:
-
-.. code-block:: console
-
-    $ sudo mn --wifi
-
-
-Display the options:
-===================
-
+A list of commands and attributes you can use include: 
 
 .. confval:: help
 
