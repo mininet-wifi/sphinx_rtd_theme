@@ -16,323 +16,106 @@ Display the options:
 ===================
 
 
-.. code:: console
+.. confval:: help
 
-    mininet-wifi> help
+    Help command
 
+.. confval:: link node1 node2 up/down
 
-Python Interpreter
-===================
-If the first phrase on the Mininet-WiFi command line is py, then that command is executed with Python. This might be useful for extending Mininet-WiFi, as well as probing its inner workings. Each station, ao, and controller has an associated Node object.
+    Link Up/Down: For fault tolerance testing, it can be helpful to bring links up and down
 
-At the Mininet CLI, run:
+.. confval:: node.setAssociation(ap1, intf='node-wlan0')
 
+    Forcing Association
 
-.. code:: console
+.. confval:: node.setRange(10, intf='node-wlan0') or net.addStation(... range=10)
 
-    mininet-wifi> py 'hello ' + 'world'
+    Setting Signal Range
 
+.. confval:: node.wintfs[0].range
 
-Print the accessible local variables:
+    Getting Signal Range
 
+.. confval:: node.setAntennaGain(10, intf='node-wlan0') or net.addStation(... antennaGain=10)
 
-.. code:: console
+    Setting the Antenna Gain
 
-    mininet-wifi> py locals()
+.. confval:: node.wintfs[0].antennaGain
 
+    Getting the Antenna Range
 
-Link Up/Down
-===================
-For fault tolerance testing, it can be helpful to bring links up and down.
+.. confval:: node.setTxPower(10, intf='node-wlan0') or net.addStation(... txpower=10)
 
-To disable both halves of a virtual ethernet pair:
+    Setting the Transmission Power
 
+.. confval:: node.wintfs[0].power
 
-.. code:: console
+    Getting the Transmission Power
 
-    mininet-wifi> link ap1 sta1 down
+.. confval:: node.setChannel(1, intf='node-wlan0')
 
+    Setting the Channel
 
-You should see an OpenFlow Port Status Change notification get generated. To bring the link back up:
+.. confval:: node.wintfs[0].channel
 
+    Getting the Channel
 
-.. code:: console
+.. confval:: node.setIntfName('newName', 0)
 
-    mininet-wifi> link sta1 ap1 up
+    Setting a new interface name: you can replace `newName` by any name and `0` by the id of the interface. For example: if the original interface is `node-wlan0` the id should by 0 while `node-wlan1` should be 1 and so on.
 
+.. confval:: node.show()
 
-Forcing Association
-===================
+    Showing Nodes
+        
+.. confval:: node.hide()
 
-You can force the association with an AP either by using iw tool:
+    Hiding Nodes
 
+.. confval:: node.set_circle_color('r')  # for red color
 
-.. code:: console
+    Setting Circle Color
 
-    mininet-wifi> sta1 iw dev sta1-wlan0 connect new-ssid
+.. confval:: node.setMasterMode(intf='node-wlan0', ssid='new-ssid', channel='1', mode='g')
 
+    Setting Master Mode
 
-or by using the Mininet-WiFi's API:
+.. confval:: node.setManagedMode(intf='node-wlan0')
 
+    Setting Managed Mode
 
-.. code:: console
+.. confval:: node.setAdhocMode(intf='node-wlan0')
 
-    mininet-wifi> py sta1.setAssociation(ap1, intf='sta1-wlan0')
+    Setting Adhoc Mode
 
+.. confval:: node.setMeshMode(intf='node-wlan0')
 
-Setting Signal Range
-===================
-You can set the Signal Range when the node is being created:
+    Setting Mesh Mode
 
+.. confval:: node.setPosition('10,10,0') # x=10, y=10, z=0
 
-.. code:: console
+    Setting Node Position
 
-    net.addStation(... range=10)
+.. confval:: node.position
 
+    Getting Node Position
 
-or at runtime:
+.. confval:: node.stop_()
 
+    Shutting AP down
 
-.. code:: console
+.. confval:: node.start_()
 
-    mininet-wifi> py sta1.setRange(10, intf='sta1-wlan0')
+    Bringing AP up
 
+.. confval:: stop
 
-and confirm the new value with:
+    Pause the simulation
 
+.. confval:: start
 
-.. code:: console
+    Continue the simulation
 
-    mininet-wifi> py sta1.wintfs[0].range
+.. code:: xterm node1 node2
 
-
-Keep in mind that if the signal range changes, txpower will also change.
-
-Setting Antenna Gain
-===================
-You can set the Antenna Gain when the node is being created:
-
-
-.. code:: console
-
-    net.addStation(... antennaGain=10)
-
-
-or at runtime:
-
-
-.. code:: console
-
-    mininet-wifi> py ap1.setAntennaGain(10, intf='ap1-wlan1')
-
-
-and confirm the new value with:
-
-
-.. code:: console
-
-    mininet-wifi> py sta1.wintfs[0].antennaGain
-
-
-Setting Tx Power
-===================
-
-You can set the Tx Power either by iw tool (for txpower = 10):
-
-
-.. code:: console
-
-    mininet-wifi> sta1 iw dev sta1-wlan0 set txpower fixed 1000
-
-
-or by using the Mininet-WiFi's API:
-
-
-.. code:: console
-
-    net.addStation(... txpower=10)
-
-
-as well as at runtime:
-
-
-.. code:: console
-
-    mininet-wifi> py ap1.setTxPower(10, intf='ap1-wlan1')
-
-
-Confirming the new value:
-
-
-.. code:: console
-
-    mininet-wifi> py ap1.wintfs[0].txpower
-
-
-Setting Channel
-===================
-You can set the channel either by iw tool:
-
-**if the node is AP:**
-
-
-.. code:: console
-
-    mininet-wifi> ap1 hostapd_cli -i ap1-wlan1 chan_switch 1 2412
-
-**if the node is working in mesh mode:**
-
-
-.. code:: console
-
-    mininet-wifi> sta1 iw dev sta1-mp0 set channel 1
-
-**if the node is working in adhoc mode:**
-
-
-.. code:: console
-
-    mininet-wifi> sta1 iw dev sta1-wlan0 ibss leave
-    mininet-wifi> sta1-wlan0 ibss join adhocNet 2412 02:CA:FF:EE:BA:01
-
-or by using the Mininet-WiFi's API:
-
-
-.. code:: console
-
-    mininet-wifi> py sta1.setChannel(1, intf='ap1-wlan1')
-
-
-Confirming the new value:
-
-.. code:: console
-
-    mininet-wifi> py sta1.wintfs[0].channel
-
-
-Renaming the Interface Name
-===================
-
-You can rename the network interface name with:
-
-.. code:: console
-
-    sta1.setIntfName('newName', 0)
-
-
-You can replace `newName` by any name and `0` by the id of the interface. For example: if the original interface is `sta1-wlan0` the id should by 0 while `sta1-wlan1` should be 1 and so on.
-
-Showing and Hiding Nodes
-===================
-
-You can hide the node with:
-
-.. code:: console
-
-    sta1.hide()
-
-
-You can show the node again with:
-
-.. code:: console
-
-    sta1.show()
-
-
-Setting Circle Color
-===================
-You can set the signal range - circle - color with:
-
-.. code:: console
-
-    sta1.set_circle_color('r')  # for red color
-
-
-Setting the Operation Mode
-===================
-
-**Master**
-
-.. code:: console
-
-    sta1.setMasterMode(intf='sta1-wlan0', ssid='ap1-ssid', channel='1', mode='g')
-
-
-**Managed**
-
-.. code:: console
-
-    ap1.setManagedMode(intf='ap1-wlan1')
-
-
-**Adhoc**
-
-.. code:: console
-
-    sta1.setAdhocMode(intf='sta1-wlan0')
-
-
-**Mesh**
-
-.. code:: console
-
-    sta1.setMeshMode(intf='sta1-wlan0')
-
-
-Setting the Node Position
-===================
-
-.. code:: console
-
-    mininet-wifi> py sta1.setPosition('10,10,0') # x=10, y=10, z=0
-
-
-Confirming the position:
-
-.. code:: console
-
-    mininet-wifi> py sta1.position
-
-
-Shutting AP down
-===================
-You can shutdown the AP with:
-
-
-.. code:: console
-
-    mininet-wifi> py ap1.stop_()
-
-and bring it up again with:
-
-
-.. code:: console
-
-    mininet-wifi> py ap1.start_()
-
-
-Stopping the Simulation
-===================
-Considering that you have some simulation with mobility running you can stop it with:
-
-.. code:: console
-
-    mininet-wifi> stop
-
-
-And run it again with:
-
-
-.. code:: console
-
-    mininet-wifi> start
-
-
-XTerm Display
-===================
-To display an xterm for sta1 and sta2:
-
-
-.. code:: console
-
-    mininet-wifi> xterm sta1 sta2
+    XTerm Display: To display an xterm for sta1 and sta2:
