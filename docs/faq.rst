@@ -64,7 +64,9 @@ How to uninstall Mininet-WiFi?
 What does the warning message about the signal range mean?
 ===================
 
+
 .. note:: If you define the signal range for a node you can get the following message:
         **WARNING: The signal range for sta1-wlan0 should be changed to 35**
+
 
 This message means that you have defined a signal range that is not supported by the propagation model you are using. To fix this you have to either modify the parameters supported by the propagation model in order to support smaller signal ranges (e.g. exponent and system loss) or define the minimum supported by the propagation model. According to the message displayed above, if you define a signal level less than 35, this will be useful only for visualization purposes, as it will actually be transmitting up to 35m.
