@@ -2,7 +2,7 @@
 Mininet-WiFi Command-Line Interface (CLI) Commands and Attributes
 ************
 
-A list of commands and attributes you can use include: 
+A list of commands and attributes you may use include: 
 
 .. confval:: help
 
