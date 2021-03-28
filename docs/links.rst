@@ -12,9 +12,9 @@ A mesh link with IEEE 802.11s can be created with the method below:
     net.addLink(sta1, cls=mesh, intf='sta1-wlan0', ssid='meshNet', channel=5)
 
 
-The command above crates a mesh link from `sta1-wlan0` through iw. Please refer to the iw documentation on how to add a new virtual interface for further information.
+The mthod above crates a mesh link from `sta1-wlan0` through iw. Please refer to the iw documentation on how to add a new virtual interface for further information.
 
-If you want to create multiple virtual mesh interfaces you can repeat the method call by setting `vIface=True` as follows.
+If you want to create multiple virtual mesh interfaces you can repeat the method call by adding `vIface=True` as follows.
 
 .. code:: python
 
@@ -25,7 +25,7 @@ If you want to create multiple virtual mesh interfaces you can repeat the method
 Ad hoc Link
 ===================
 
-A adhoc link can be created with the method below:
+An adhoc link can be created with the method below:
 
 .. code:: python
 
