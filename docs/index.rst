@@ -9,6 +9,7 @@
    usage
    options
    commands
+   links
 
 .. toctree::
    :maxdepth: 1

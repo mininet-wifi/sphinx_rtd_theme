@@ -1,5 +1,5 @@
 ************
-Mininet-WiFi Command-Line Interface (CLI) Commands and Attributes
+Mininet-WiFi CLI Commands and Attributes
 ************
 
 Display Options
