@@ -3,9 +3,9 @@
 **************************
 
 
-6LoWPAN is supported by Mininet-WiFi thanks to the fakelb and mac802154_hwsim module. Both modules have been developed to support 6lowpan, but mac802154_hwsim (which is supported from Linux Kernel version 4.18) is gradually replacing fakelb.
+6LoWPAN is supported by Mininet-WiFi thanks to the ```fakelb``` and ```mac802154_hwsimv modules. Both modules have been developed to support 6lowpan, but ```mac802154_hwsim``` (which is supported from Linux Kernel version 4.18) is gradually replacing fakelb.
 
-You can find an example for 6LoWPAN at `examples/6LoWPan.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/6LoWPan.py>`_. However, you first need to install iwpan tool with:
+You can find an example for 6LoWPAN at `examples/6LoWPan.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/6LoWPan.py>`_. However, you first need to install ```iwpan``` tool with:
 
 .. code:: console
 
@@ -51,6 +51,11 @@ Alternatively, you can --help for more more information about the features suppo
 .. code:: console
 
     mininet-wifi> sensor1 iwpan --help
+    
+    
+.. warning::
+
+    This 6lowpan implementation still lacks of a solution like `wmediumd <https://github.com/ramonfontes/wmediumd>`_ (originally developed by _`bcopeland <https://github.com/bcopeland>`_ and adapted to Mininet-WiFi by _`patgrosse <https://github.com/patgrosse>`_) for a perfect wireless medium simulation. The most important impact on this is related to the position of the nodes and the received signal. In other words, ```mac802154_hwsim``` will not be able to recognized the position of the nodes.
 
 
 **Demo Video**
