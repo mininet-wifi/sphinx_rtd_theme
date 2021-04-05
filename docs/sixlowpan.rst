@@ -55,7 +55,7 @@ Alternatively, you can --help for more more information about the features suppo
     
 .. warning::
 
-    This 6lowpan implementation still lacks of a solution like `wmediumd <https://github.com/ramonfontes/wmediumd>`_ (originally developed by _`bcopeland <https://github.com/bcopeland>`_ and adapted to Mininet-WiFi by _`patgrosse <https://github.com/patgrosse>`_) for a perfect wireless medium simulation. The most important impact on this is related to the position of the nodes and the received signal. In other words, ```mac802154_hwsim``` will not be able to recognized the position of the nodes.
+    This 6lowpan implementation still lacks of a solution like `wmediumd <https://github.com/ramonfontes/wmediumd>`_ (originally developed by `bcopeland <https://github.com/bcopeland>`_ and adapted to Mininet-WiFi by `patgrosse <https://github.com/patgrosse>`_) for a perfect wireless medium simulation. The most important impact on this is related to the position of the nodes and the received signal. In other words, ```mac802154_hwsim``` will not be able to recognized the position of the nodes.
 
 
 **Demo Video**
