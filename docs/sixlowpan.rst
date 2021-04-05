@@ -3,7 +3,7 @@
 **************************
 
 
-6LoWPAN is supported by Mininet-WiFi thanks to the ```fakelb``` and ```mac802154_hwsimv modules```. Both modules have been developed to support 6lowpan, but ```mac802154_hwsim``` (which is supported from Linux Kernel version 4.18) is gradually replacing fakelb.
+6LoWPAN is supported by Mininet-WiFi thanks to the ```fakelb``` and ```mac802154_hwsim``` modules. Both modules have been developed to support 6lowpan, but ```mac802154_hwsim``` (which is supported from Linux Kernel version 4.18) is gradually replacing fakelb.
 
 You can find an example for 6LoWPAN at `examples/6LoWPan.py <https://github.com/intrig-unicamp/mininet-wifi/blob/master/examples/6LoWPan.py>`_. However, you first need to install ```iwpan``` tool with:
 
