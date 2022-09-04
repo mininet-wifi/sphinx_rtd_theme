@@ -82,9 +82,11 @@ Mininet-WiFi supports IEEE 802.11a,b,g,b,p,ax,ac, etc. You can basically use all
 
     $ sudo mn --wifi --mode=g --channel=6
     $ sudo mn --wifi --mode=a --channel=36
-    $ sudo mn --wifi --mode=n --freq=5 --channel=36
-    $ sudo mn --wifi --mode=n5 --channel=6  # for 5GHz
-    $ sudo mn --wifi --mode=ax --channel=36
+    $ sudo mn --wifi --mode=n2 --channel=1 # for 2.4GHz
+    $ sudo mn --wifi --mode=n --channel=36 # for 5GHz
+    $ sudo mn --wifi --mode=ax2 --channel=1 --mode=ax --encrypt=wpa2 --passwd=test101010 # for 2.4GHz
+    $ sudo mn --wifi --mode=ax5 --channel=36 --mode=ax --encrypt=wpa2 --passwd=test101010 # for 5GHz
+    $ sudo mn --wifi --mode=ax --channel=21 --mode=ax --encrypt=wpa2 --passwd=test101010 # for 6GHz
 
 Test connectivity between stations
 ===================

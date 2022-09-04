@@ -3,7 +3,7 @@ Introduction
 **************************
 
 
-Learn more about Mininet-WiFi and SDN with `The Mininet-WiFi Book <https://mininet-wifi.github.io/book>`_
+Learn more about Mininet-WiFi and SDN with The Mininet-WiFi Book! It is now free and open at https://github.com/ramonfontes/mn-wifi-ebook/.
 
 
 Mininet-WiFi is a fork of the Mininet SDN network emulator and extended the functionality of Mininet by adding virtualized WiFi Stations and Access Points based on the standard Linux wireless drivers and the 80211_hwsim wireless simulation driver. This means that new classes has been added in order to support the addition of these wireless devices in a Mininet network scenario and to emulate the attributes of a mobile station such as position and movement relative to the access points.
