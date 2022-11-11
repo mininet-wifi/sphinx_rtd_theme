@@ -115,6 +115,18 @@ or even
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid=ssid1, mode='g', channel='1')
 
 
+Connecting stations to multiple APs
+-------------------------------------
+
+You can use addLink() as follows:
+
+.. code:: console
+
+    net.addLink(ap1, sta1, 0, 0) # where 0, 0 means first interface of ap1 and sta1
+    net.addLink(ap1, sta1, 0, 1) # where 0, 1 means first interface of ap1 and second interface of sta1
+
+
+
 Multiple SSIDs over a Single AP
 ===================
 It is very common for an organization to have multiple SSIDs in their wireless network for various purposes, including: (i) to provide different security mechanisms such as WPA2-Enterprise for your employees and an “open” network with a captive portal for guests; (ii) to split bandwidth among different types of service; or (iii) to reduce costs by reducing the amount of physical access points. In Mininet-WiFi, an unique AP supports up to 8 different SSIDs (limitation imposed by mac80211_hwsim). Multiple SSIDs can be configured as below:
